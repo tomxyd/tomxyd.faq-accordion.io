@@ -1,0 +1,127 @@
+@import "global";
+@import "variable";
+
+section {
+  margin: 0 auto;
+  margin-top: 150px;
+  width: 60vw;
+  height: 75vh;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 50px $v-dark-gray-blue;
+}
+.card {
+  display: flex;
+  height: inherit;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 420% 70%;
+  .woman-desk {
+    top: 18%;
+    position: relative;
+    transform: translateX(-15%);
+  }
+  .box {
+    position: absolute;
+    bottom: 20%;
+    left: 14%;
+
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  }
+}
+.card-text {
+  width: 90%;
+  padding: 50px;
+}
+.accordion {
+  .container {
+    position: relative;
+    margin: 10px 10px;
+  }
+  .label {
+    font-size: 13px;
+    word-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: 0.1s;
+  }
+  .label::before {
+    content: url("../images/icon-arrow-down.svg");
+    position: absolute;
+    right: -5px;
+    transform: translateX(-50%);
+    transition: 0.2s;
+  }
+  .label:hover {
+    color: $soft-red;
+  }
+  .content {
+    position: relative;
+    color: $v-dark-gray-blue;
+    font-size: 11px;
+    word-spacing: 1px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+  hr {
+    border: 0.1px solid $light-blue;
+  }
+  .container.active {
+    .content {
+      height: 40px;
+    }
+    .label {
+      font-weight: 700;
+    }
+    .label::before {
+      transform: scaleY(-1);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    height: 80vh;
+  }
+  .card {
+    flex-direction: column;
+    overflow: visible;
+    height: 100px;
+    background-size: 200px 200px;
+    background-position: 50% 120%;
+    .woman-desk {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      margin: auto;
+      top: -100px;
+      transform: translateX(20%);
+    }
+    .box {
+      top: 100px;
+      left: 115px;
+      img {
+        width: 90px;
+        height: 85px;
+      }
+    }
+  }
+  .card-image {
+    height: 100px;
+  }
+
+  .card-text {
+    width: inherit;
+    padding: 0 5px;
+    h1 {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
